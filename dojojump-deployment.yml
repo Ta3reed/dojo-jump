@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: dojojump-deployment
+ labels:
+   app: dojo-jump
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: dojo-jump
+ template:
+   metadata:
+     labels:
+       app: dojo-jump
+   spec:
+     containers:
+     - name: dojo-jump
+       image: tagreed202/dojo-jump1:latest
+       ports:
+       - containerPort: 80
